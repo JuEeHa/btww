@@ -18,8 +18,8 @@ public class Knife extends Item {
 		setMaxStackSize(1);
 		setCreativeTab(CreativeTabs.tabTools);
 		setUnlocalizedName("knife");
-		func_111206_d("btww:knife");
-		setMaxDamage(128);
+		setTextureName("btww:knife");
+		setMaxDamage(1024);
 		this.damageVsEntity=5.0F;
 	}
 	
@@ -32,9 +32,9 @@ public class Knife extends Item {
 		i.damageItem(1,k);
 		return true;
 	}
-	public Multimap func_111205_h() {
-		Multimap multimap = super.func_111205_h();
-		multimap.put(SharedMonsterAttributes.field_111264_e.func_111108_a(), new AttributeModifier(field_111210_e, "Tool modifier", (double)this.damageVsEntity, 0));
+	public Multimap getItemAttributeModifiers() {
+		Multimap multimap = super.getItemAttributeModifiers();
+		multimap.put(SharedMonsterAttributes.attackDamage.getAttributeUnlocalizedName(), new AttributeModifier(field_111210_e, "Tool modifier", (double)this.damageVsEntity, 0));
 		return multimap;
 	}
 }
