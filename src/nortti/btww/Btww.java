@@ -14,7 +14,7 @@ import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-@Mod(modid="btww", name="Better Than Were-Wolves", version="0.2")
+@Mod(modid="btww", name="Better Than Were-Wolves", version="0.3")
 @NetworkMod(clientSideRequired=true)
 public class Btww {
 	@Instance(value="btww")

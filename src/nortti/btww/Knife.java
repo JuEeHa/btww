@@ -19,7 +19,7 @@ public class Knife extends Item {
 		setCreativeTab(CreativeTabs.tabTools);
 		setUnlocalizedName("knife");
 		setTextureName("btww:knife");
-		setMaxDamage(1024);
+		setMaxDamage(256);
 		this.damageVsEntity=5.0F;
 	}
 	
