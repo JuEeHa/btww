@@ -14,7 +14,7 @@ import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-@Mod(modid="btww", name="Better Than Were-Wolves", version="0.4")
+@Mod(modid="btww", name="Better Than Were-Wolves", version="0.5")
 @NetworkMod(clientSideRequired=true)
 public class Btww {
 	@Instance(value="btww")
@@ -25,6 +25,7 @@ public class Btww {
 	
 	/* Items */
 	public final static Item knife=new Knife(5000);
+	public final static Item sharpenedstick=new SharpenedStick(5001);
 	
 	/* Blocks */
 	public final static Block nottrappyblock=new NotTrappyBlock(500);
@@ -34,11 +35,24 @@ public class Btww {
 	
 	@EventHandler
 	public void load(FMLInitializationEvent event) {
-		LanguageRegistry.addName(knife,"Iron Knife");
+		/* Items */
 		GameRegistry.addRecipe(new ItemStack(knife),
 		                       "/",
 		                       "I",
-		                       '/',new ItemStack(Item.ingotIron),'I',new ItemStack(Item.stick));
+		                       '/', new ItemStack(Item.ingotIron), 'I', new ItemStack(Item.stick));
+		LanguageRegistry.addName(knife,"Iron Knife");
+		
+		GameRegistry.addRecipe(new ItemStack(sharpenedstick),
+		                       "I",
+		                       'I', new ItemStack(Item.stick));
+		LanguageRegistry.addName(sharpenedstick, "Sharpened Stick");
+		
+		/* Blocks */
+		GameRegistry.registerBlock(nottrappyblock, "nottrappyblock");
+		GameRegistry.addRecipe(new ItemStack(nottrappyblock),
+		                       "//",
+		                       "//",
+		                       '/', new ItemStack(sharpenedstick));
 		LanguageRegistry.addName(nottrappyblock, "Not Trappy Block");
 	}
 	
