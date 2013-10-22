@@ -14,7 +14,7 @@ import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-@Mod(modid="btww", name="Better Than Were-Wolves", version="0.3")
+@Mod(modid="btww", name="Better Than Were-Wolves", version="0.4")
 @NetworkMod(clientSideRequired=true)
 public class Btww {
 	@Instance(value="btww")
@@ -26,6 +26,9 @@ public class Btww {
 	/* Items */
 	public final static Item knife=new Knife(5000);
 	
+	/* Blocks */
+	public final static Block nottrappyblock=new NotTrappyBlock(500);
+	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {}
 	
@@ -36,6 +39,7 @@ public class Btww {
 		                       "/",
 		                       "I",
 		                       '/',new ItemStack(Item.ingotIron),'I',new ItemStack(Item.stick));
+		LanguageRegistry.addName(nottrappyblock, "Not Trappy Block");
 	}
 	
 	@EventHandler
